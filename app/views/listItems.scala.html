@@ -1,0 +1,23 @@
+@(items: Items, form: Form[Items])
+
+@main("Items") {
+<h3>Currently available in our shop:</h3>
+    <table>
+        <tbody>
+            <tr><td>ItemA: @items.itemA</td></tr>
+            <tr><td>ItemB: @items.itemB</td></tr>
+        </tbody>
+    </table>
+
+    <hr/>
+
+    <h3>Your shopping:</h3>
+    <form method="POST" action="/">
+
+        ItemA: <input type="number" id="itemA".id name="itemA".label value="0" min="0" max="@items.itemA" style="width: 100px"><br/>
+
+        ItemB: <input type="number" id="itemB".id name="itemB".label value="0" min="0" max="@items.itemB" style="width: 100px">
+
+        <button type="submit">Buy</button>
+    </form>
+}
